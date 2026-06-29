@@ -13,7 +13,9 @@ const Navbar = () => {
     ]
   return (
     <nav className='sticky top-0 z-50 flex justify-between items-center px-10 py-5 bg-black text-white border-b border-gray-800'>
-        <div className='text-2xl font-bold text-purple-500'>DC</div>
+        <div className='text-2xl font-bold text-purple-500'>
+            <span className="text-gray-500">&lt;</span>DC<span className="text-gray-500">/&gt;</span>
+        </div>
         <ul className='flex gap-8 list-none'>
             {navLinks.map((link) =>(
                 <li key={link.id}>

@@ -10,11 +10,30 @@ const Contact = () => {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
 
-    const handleSubmit = (e)=>{
-        e.preventDefault()
-        console.log(formData)
-        setSent(true)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+        const response = await fetch('https://portfolio-backend-n8na.onrender.com/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+
+        const data = await response.json()
+
+        if (data.success) {
+            setSent(true)
+        } else {
+            alert('Something went wrong. Please try again.')
+        }
+    } catch (error) {
+        console.error('Error:', error)
+        alert('Failed to send message. Please check your connection.')
     }
+}
 
     return(
         <section id='contact' className='px-16 py-20 bg-gray-950 text-white '>
