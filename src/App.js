@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
@@ -10,7 +10,14 @@ import Education from './sections/Education'
 import Footer from './sections/Footer'
 
 
+
 function App(){
+ useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual'
+    }
+    window.scrollTo(0, 0)
+}, [])
   return (
     
     <div className='app bg-black min-h-screen'>

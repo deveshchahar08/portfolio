@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = ( ) =>{
     return(
-        <section className="flex flex-col md:flex-row justify-between items-center px-20 py-24 bg-black text-white min-h-screen">
+        <section name="hero" className="flex flex-col md:flex-row justify-between items-center px-20 py-24 bg-black text-white min-h-screen">
             <div className="ml-[100px]">
             <p className="text-purple-400 text-sm mb-2">👋 Hello, I'm</p>
             <h1 className="text-5xl font-bold mb-2 ">Devesh Chahar</h1>
